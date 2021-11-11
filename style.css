@@ -1,0 +1,19 @@
+* {
+    color:black;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+.grid {
+    color: black;
+    width: 100%;
+}
