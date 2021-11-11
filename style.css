@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
 * {
-    color:black;
+    color:rgb(0, 0, 0);
+    font-family: Poppins;
 }
 
 header {
@@ -13,7 +16,18 @@ main {
     justify-content: center;
 }
 
-.grid {
-    color: black;
+.pixelContainer {
+    display: grid;
+    grid-template-columns: repeat(16, 50px);
+    grid-template-rows: repeat(16,50px);
+    width: 800px;
+    height: 800px;
+    border: 2px black solid;
+}
+
+.pixel {
+    background-color: rgb(255, 255, 255);
+    border: 1px rgb(211, 211, 211) solid;
     width: 100%;
+    height: 100%;
 }
