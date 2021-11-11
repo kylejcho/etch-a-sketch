@@ -1,6 +1,18 @@
-let pixelNum = 16;
-let pixelCount = Math.pow(pixelNum,2) 
-console.log(pixelCount)
+let pixelWidth = 16;
+let pixelCount = Math.pow(pixelWidth,2) 
+console.log("pixel count: " + pixelCount)
+
+
+
+
+
+
+
+
+
+
+
+
 
 for (let i = 1; i <= pixelCount; i++) {
     let createPixel = document.createElement("div");
@@ -12,6 +24,6 @@ for (let i = 1; i <= pixelCount; i++) {
 for (let i = 1; i <= pixelCount; i++) {
     let pixel = document.querySelector("#p" + i);
     pixel.onmouseenter = function() {
-        this.style.backgroundColor= "black";
+        this.style.backgroundColor = "black";
     }
 }
