@@ -9,11 +9,11 @@
 
 header {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     justify-content: center;
-    font-size: 3.5rem;
+    font-size: 5rem;
     font-weight: 700;
-    height: 10vh;
+    height: 15vh;
 }
 
 main {
@@ -31,6 +31,21 @@ main {
     align-items: center;
     width: 30vw;
     height: 10vw;
+}
+
+.colorButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #383838;
+    height: 40px;
+    width: 100px;
+    border-radius: 10px;
+    border: 3.5px solid #383838;
+    transition: all 0.15s ease;
+    margin-bottom: 30px;
 }
 
 .clearButton {
@@ -54,7 +69,8 @@ main {
 }
 
 .slider {
-
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 .selection {
@@ -68,14 +84,13 @@ main {
 
 .pixelContainer {
     display: grid;
-    width: 40vw;
-    height: 40vw;
+    width: 30vw;
+    height: 30vw;
+    background-color: #ffffff;
     box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3);
 }
 
-.pixel {
-    background-color: #ffffff;
-    
+.pixel {    
 }
 
 .spacer{
@@ -87,5 +102,5 @@ main {
 }
 
 footer {
-    height: 10vh;
+    height: 5vh;
 }

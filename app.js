@@ -4,19 +4,17 @@ let pixelCount = 256;
 
 
 
-
 //Clear button
 let clearButton = document.querySelector(".clearButton");
 
 function clear() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
-        pixel.style.backgroundColor = "white";
+        pixel.style.backgroundColor = "";
     }
 }
 
 clearButton.addEventListener('click', function() {
-    console.log("clear button clicked")
     clear();
 })
 
@@ -26,7 +24,6 @@ clearButton.addEventListener('click', function() {
 function createGrid() {
     
     pixelCount = Math.pow(pixelWidth,2) 
-    console.log("pixel count: " + pixelCount)
 
     let pixelContainer = document.querySelector(".pixelContainer")
     pixelContainer.textContent = '';
@@ -50,7 +47,10 @@ function colorPixel() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
         pixel.onmouseenter = function() {
-            pixel.style.transition= "all 0.1s ease";
+            for (let i = 1; i <= pixelCount; i++) {
+                let pixel = document.querySelector("#p" + i);
+                pixel.style.border = "";
+            }   
             this.style.backgroundColor = "#444444";
         }
     }
@@ -63,23 +63,32 @@ function colorPixel() {
 let slider = document.querySelector(".slider");
 let selection = document.querySelector(".selection");
 
-slider.oninput = function() {
-    selection.innerHTML = this.value + ' x ' + this.value;
-    pixelWidth = this.value;
-    console.log(pixelWidth);
-    createGrid();
-
+slider.onmouseover = function() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
         pixel.style.border = "solid 1px #f0b0b0";
     }   
 }
 
-function releaseSlider() {
+slider.onmouseout = function() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
-        pixel.style.border = "none";
-        pixel.style.backgroundColor = "#ffffff";
+        pixel.style.border = "";
+    }   
+}
+
+
+slider.oninput = function() {
+    selection.innerHTML = this.value + ' x ' + this.value;
+    pixelWidth = this.value;
+    clear();
+}
+
+function releaseSlider() {
+    createGrid();
+    for (let i = 1; i <= pixelCount; i++) {
+        let pixel = document.querySelector("#p" + i);
+        pixel.style.border = "solid 1px #f0b0b0";
     }   
 }
 
