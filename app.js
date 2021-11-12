@@ -1,6 +1,24 @@
 //Starting pixel width/height
 let pixelWidth = 16;
 let pixelCount = 256;
+//Default color
+let color = "#444444";
+
+
+//Color Button
+let colorButton = document.querySelector('.colorButton');
+colorButton.addEventListener('click', function() {
+    color = "#444444"
+})
+
+
+//Eraser Button
+let eraserButton = document.querySelector('.eraserButton');
+eraserButton.addEventListener('click', function() {
+    color = ""
+})
+
+
 
 
 
@@ -51,7 +69,7 @@ function colorPixel() {
                 let pixel = document.querySelector("#p" + i);
                 pixel.style.border = "";
             }   
-            this.style.backgroundColor = "#444444";
+            this.style.backgroundColor = color;
         }
     }
 }
