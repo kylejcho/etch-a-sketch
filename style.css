@@ -39,11 +39,11 @@ main {
     align-items: center;
     font-size: 1.5rem;
     font-weight: 600;
-    color: #383838;
+    color: #444444;
     height: 40px;
     width: 100px;
     border-radius: 10px;
-    border: 3.5px solid #383838;
+    border: 3.5px solid #444444;
     transition: all 0.15s ease;
     margin-bottom: 30px;
 }
