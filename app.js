@@ -19,9 +19,6 @@ eraserButton.addEventListener('click', function() {
 })
 
 
-
-
-
 //Clear button
 let clearButton = document.querySelector(".clearButton");
 
@@ -30,12 +27,12 @@ function clear() {
         let pixel = document.querySelector("#p" + i);
         pixel.style.backgroundColor = "";
     }
+    color = "#444444"
 }
 
 clearButton.addEventListener('click', function() {
     clear();
 })
-
 
 
 //Create Grid
