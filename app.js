@@ -165,15 +165,24 @@ c12.style.backgroundColor = "black";
 
 
 for (let i = 1; i <= 12; i++) {
-   
     let a = document.querySelector("#c" + i);
-
     let b = window.getComputedStyle(a, null).getPropertyValue('background-color');
-    console.log(b);
-
     a.addEventListener('click', function() {
-        console.log("clicked");
         color = b;
     })
+
+
 }
+
+
+
+//Custom cursor
+let cursor = document.querySelector(".cursor");
+document.addEventListener('mousemove', function(e) {
+    cursor.setAttribute("style", "top: " +  (e.pageY-8) + "px; left:  " + (e.pageX - 8) + "px;");
+    cursor.style.backgroundColor = color;
+})
+
+
+
 
