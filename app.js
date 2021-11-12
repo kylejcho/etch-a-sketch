@@ -52,7 +52,6 @@ function colorPixel() {
         pixel.onmouseenter = function() {
             pixel.style.transition= "all 0.1s ease";
             this.style.backgroundColor = "#444444";
-            //this.style.boxShadow= "5px 5px 10px rgba(0, 0, 0, 0.1) inset";
         }
     }
 }
@@ -72,7 +71,7 @@ slider.oninput = function() {
 
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
-        pixel.style.border = "solid 1px #eeeeee";
+        pixel.style.border = "solid 1px #f0b0b0";
     }   
 }
 
@@ -80,6 +79,7 @@ function releaseSlider() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
         pixel.style.border = "none";
+        pixel.style.backgroundColor = "#ffffff";
     }   
 }
 

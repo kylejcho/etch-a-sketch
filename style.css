@@ -49,7 +49,7 @@ main {
 }
 
 .clearButton:hover {
-    background-color: #cc5b5b;
+    background-color: #e99090;
     color: white;
 }
 
@@ -70,11 +70,11 @@ main {
     display: grid;
     width: 40vw;
     height: 40vw;
-    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3)  ;
+    box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3);
 }
 
 .pixel {
-    background-color: rgb(255, 255, 255);
+    background-color: #ffffff;
     
 }
 
