@@ -22,7 +22,6 @@ clearButton.addEventListener('click', function() {
 
 
 
-
 //Create Grid
 function createGrid() {
     
@@ -32,7 +31,7 @@ function createGrid() {
     let pixelContainer = document.querySelector(".pixelContainer")
     pixelContainer.textContent = '';
     pixelContainer.style.gridTemplate = "repeat(" + pixelWidth + ", auto) / repeat(" + pixelWidth + ",auto)";
-    
+
     for (let i = 1; i <= pixelCount; i++) {
         let createPixel = document.createElement("div");
         createPixel.classList.add("pixel");
@@ -61,10 +60,7 @@ function colorPixel() {
 
 
 
-
-
-
-//selection
+//selection slider
 let slider = document.querySelector(".slider");
 let selection = document.querySelector(".selection");
 
@@ -73,9 +69,21 @@ slider.oninput = function() {
     pixelWidth = this.value;
     console.log(pixelWidth);
     createGrid();
+
+    for (let i = 1; i <= pixelCount; i++) {
+        let pixel = document.querySelector("#p" + i);
+        pixel.style.border = "solid 1px #eeeeee";
+    }   
 }
 
+function releaseSlider() {
+    for (let i = 1; i <= pixelCount; i++) {
+        let pixel = document.querySelector("#p" + i);
+        pixel.style.border = "none";
+    }   
+}
 
+slider.onmouseup = releaseSlider;
 
 
 
