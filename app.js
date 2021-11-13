@@ -25,6 +25,7 @@ function clear() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
         pixel.style.backgroundColor = "";
+        pixel.style.boxShadow = "";
     }
 
     //color = "#444444"
@@ -68,7 +69,12 @@ function colorPixel() {
                 pixel.style.border = "";
             }   
             this.style.backgroundColor = color;
-            //this.style.boxShadow="0 0 6px rgba(0, 0, 0, 0.3)"; 
+            this.style.boxShadow="0 0 6px rgba(0, 0, 0, 0.3)"; 
+
+            if (color == "") {
+                this.style.boxShadow=""; 
+            }
+            
         }
     }
 }
