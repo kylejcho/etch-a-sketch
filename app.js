@@ -7,15 +7,14 @@ let color = "#444444";
 
 //Color Button
 let colorButton = document.querySelector('.colorButton');
-colorButton.addEventListener('click', function() {
-    color = "#444444"
-})
+colorButton.style.color = "#444444";
 
 
 //Eraser Button
 let eraserButton = document.querySelector('.eraserButton');
 eraserButton.addEventListener('click', function() {
     color = ""
+    eraserButton.style.color = "#e29091"
 })
 
 
@@ -27,11 +26,13 @@ function clear() {
         let pixel = document.querySelector("#p" + i);
         pixel.style.backgroundColor = "";
     }
-    color = "#444444"
+
+    //color = "#444444"
 }
 
 clearButton.addEventListener('click', function() {
     clear();
+    eraserButton.style.color = "#868686";
 })
 
 
@@ -169,9 +170,10 @@ for (let i = 1; i <= 12; i++) {
     let b = window.getComputedStyle(a, null).getPropertyValue('background-color');
     a.addEventListener('click', function() {
         color = b;
+        colorButton.addEventListener('click', function() {
+            color = b;
+        })
     })
-
-
 }
 
 
@@ -179,10 +181,18 @@ for (let i = 1; i <= 12; i++) {
 //Custom cursor
 let cursor = document.querySelector(".cursor");
 document.addEventListener('mousemove', function(e) {
-    cursor.setAttribute("style", "top: " +  (e.pageY-8) + "px; left:  " + (e.pageX - 8) + "px;");
+    cursor.setAttribute("style", "top: " +  (e.clientY-7) + "px; left:  " + (e.clientX - 7) + "px;");
     cursor.style.backgroundColor = color;
 })
 
+document.addEventListener('click', function() {
+    cursor.style.backgroundColor = color;
+    let header = document.querySelector('header');
+    header.style.color = color;
+    colorButton.style.color = color;
+})
 
-
-
+colorButton.addEventListener('click', function() {
+    colorButton.style.color = color;
+    eraserButton.style.color = "#868686";
+})

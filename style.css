@@ -15,6 +15,7 @@ header {
     font-size: 5rem;
     font-weight: 800;
     height: 15vh;
+    transition: all 0.5s ease-in-out;
 }
 
 .headerSpacer {
@@ -92,7 +93,6 @@ main {
 .colorButton:hover {
     background-color: #ffffff;
     transform: scale(1.1);
-    color: #383838;
 }
 
 .eraserButton {
@@ -101,7 +101,7 @@ main {
     align-items: center;
     font-size: 1.2rem;
     font-weight: 600;
-    color: rgb(134, 134, 134);
+    color: #868686;
     height: 50px;
     width: 150px;
     border-radius: 10px;
@@ -113,7 +113,7 @@ main {
 .eraserButton:hover {
     background-color: #ffffff;
     transform: scale(1.1);
-    color: #383838;
+    color: #e29091;
 }
 
 .clearButton {
@@ -136,13 +136,32 @@ main {
 .clearButton:hover {
     transform: scale(1.1);
     background-color: white;
-    color: #383838;
+    color: #f94144;
 }
 
 .slider {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    -webkit-appearance: none;
+    width: 150px;
+    height: 15px;
+    background: rgb(248, 248, 248);
+    margin-top: 15px;
+    border-radius: 15px;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.23) inset; 
+    overflow: hidden;
 }
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50px;
+    background:rgb(236, 236, 236);
+    box-shadow: -407px 0 0 400px rgb(219, 126, 126);
+    border: 2px solid rgb(195, 195, 195);
+}
+
+
+
 
 .selection {
     display: flex;
@@ -178,9 +197,8 @@ footer {
 }
 
 .cursor {
-    
-    width: 16px;
-    height: 16px;
+    width: 14px;
+    height: 14px;
     border: 2px solid #c5c5c5;
     border-radius: 5px;
     position: absolute;
