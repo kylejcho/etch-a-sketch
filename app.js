@@ -68,6 +68,7 @@ function colorPixel() {
                 pixel.style.border = "";
             }   
             this.style.backgroundColor = color;
+            //this.style.boxShadow="0 0 6px rgba(0, 0, 0, 0.3)"; 
         }
     }
 }
