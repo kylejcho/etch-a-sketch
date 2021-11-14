@@ -27,13 +27,11 @@ function clear() {
         pixel.style.backgroundColor = "";
         pixel.style.boxShadow = "";
     }
-
-    //color = "#444444"
 }
 
 clearButton.addEventListener('click', function() {
     clear();
-    eraserButton.style.color = "#868686";
+    eraserButton.style.color = "#b6b6b6";
 })
 
 
@@ -74,10 +72,11 @@ function colorPixel() {
             if (color == "") {
                 this.style.boxShadow=""; 
             }
-            
         }
     }
 }
+
+
 
 
 
@@ -169,7 +168,7 @@ let c11 = document.querySelector('#c11');
 c11.style.backgroundColor = "#444444";
 
 let c12 = document.querySelector('#c12');
-c12.style.backgroundColor = "black";
+c12.style.backgroundColor = "#222222";
 
 
 for (let i = 1; i <= 12; i++) {
@@ -201,5 +200,5 @@ document.addEventListener('click', function() {
 
 colorButton.addEventListener('click', function() {
     colorButton.style.color = color;
-    eraserButton.style.color = "#868686";
+    eraserButton.style.color = "#b6b6b6";
 })
