@@ -176,6 +176,7 @@ for (let i = 1; i <= 12; i++) {
     let b = window.getComputedStyle(a, null).getPropertyValue('background-color');
     a.addEventListener('click', function() {
         color = b;
+        eraserButton.style.color = "#b6b6b6";
         colorButton.addEventListener('click', function() {
             color = b;
         })
