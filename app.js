@@ -1,16 +1,23 @@
-//Starting pixel width/height
+//Default pixel width/height
 let pixelWidth = 16;
 let pixelCount = 256;
-//Default color
+
+//Default pixel color
 let color = "#444444";
 
 
-//Color Button
+//COLOR BUTTON
 let colorButton = document.querySelector('.colorButton');
 colorButton.style.color = "#444444";
+//When color button is clicked, pixel background color is chosen color value
+colorButton.addEventListener('click', function() {
+    colorButton.style.color = color;
+    eraserButton.style.color = "#b6b6b6";
+})
 
 
-//Eraser Button
+//ERASER BUTTON
+//When eraser button is clicked, cursor deletes pixel color 
 let eraserButton = document.querySelector('.eraserButton');
 eraserButton.addEventListener('click', function() {
     color = ""
@@ -18,9 +25,9 @@ eraserButton.addEventListener('click', function() {
 })
 
 
-//Clear button
+//CLEAR BUTTON
 let clearButton = document.querySelector(".clearButton");
-
+//Function deletes background color of all pixels on grid
 function clear() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
@@ -28,22 +35,26 @@ function clear() {
         pixel.style.boxShadow = "";
     }
 }
-
+//When clear button is clicked, run clear function
 clearButton.addEventListener('click', function() {
     clear();
     eraserButton.style.color = "#b6b6b6";
 })
 
 
-//Create Grid
-function createGrid() {
-    
-    pixelCount = Math.pow(pixelWidth,2) 
 
+//CREATE GRID
+function createGrid() {
+    //Total pixel count = width^2
+    pixelCount = Math.pow(pixelWidth,2) 
     let pixelContainer = document.querySelector(".pixelContainer")
     pixelContainer.textContent = '';
+
+    //Takes width and creates grid template to dynamically fit pixal container size
     pixelContainer.style.gridTemplate = "repeat(" + pixelWidth + ", auto) / repeat(" + pixelWidth + ",auto)";
 
+    //Adds pixel divs in the amount of pixelCount to the grid template. 
+    //Creates numberically ordered IDs for each pixel
     for (let i = 1; i <= pixelCount; i++) {
         let createPixel = document.createElement("div");
         createPixel.classList.add("pixel");
@@ -53,11 +64,10 @@ function createGrid() {
     colorPixel();
 }
 
+createGrid();
 
 
-
-
-//color pixel on mouse enter
+//color pixel on mouse enter using chosen color 
 function colorPixel() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
@@ -75,23 +85,20 @@ function colorPixel() {
         }
     }
 }
-
-
-
-
+colorPixel();
 
 
 //selection slider
 let slider = document.querySelector(".slider");
 let selection = document.querySelector(".selection");
 
+//Reveal grid template when using grid size slider
 slider.onmouseover = function() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
         pixel.style.border = "solid 1px #f0b0b0";
     }   
 }
-
 slider.onmouseout = function() {
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
@@ -99,14 +106,17 @@ slider.onmouseout = function() {
     }   
 }
 
-
+//display grid size when changing slider value
 slider.oninput = function() {
     selection.innerHTML = this.value + ' x ' + this.value;
     pixelWidth = this.value;
+
+    //clears pixel container when changing grid size
     clear();
 }
 
-function releaseSlider() {
+//Create a new grid once slider once mouse click is released
+slider.onmouseup = function() {
     createGrid();
     for (let i = 1; i <= pixelCount; i++) {
         let pixel = document.querySelector("#p" + i);
@@ -114,92 +124,45 @@ function releaseSlider() {
     }   
 }
 
-slider.onmouseup = releaseSlider;
 
-
-
-
-createGrid();
-colorPixel();
 
 
 //Color Pallete
+//Creates buttons for color selection. 
 let colorsContainer = document.querySelector(".colorsContainer");
 for (let i = 1; i <= 12; i++) {
     let createColor = document.createElement("button");
     createColor.classList.add("colorOption");
     createColor.id = "c" + i;
     colorsContainer.appendChild(createColor);
-
 }
 
-
-let c1 = document.querySelector('#c1');
-let f94144 = c1.style.backgroundColor = "#f94144"
-
-let c2 = document.querySelector('#c2');
-c2.style.backgroundColor = "#f3722c";
-
-let c3 = document.querySelector('#c3');
-c3.style.backgroundColor = "#f8961e";
-
-let c4 = document.querySelector('#c4');
-c4.style.backgroundColor = "#f9844a";
-
-let c5 = document.querySelector('#c5');
-c5.style.backgroundColor = "#f9c74f";
-
-let c6 = document.querySelector('#c6');
-c6.style.backgroundColor = "#90be6d";
-
-let c7 = document.querySelector('#c7');
-c7.style.backgroundColor = "#43aa8b";
-
-let c8 = document.querySelector('#c8');
-c8.style.backgroundColor = "#4d908e";
-
-let c9 = document.querySelector('#c9');
-c9.style.backgroundColor = "#277da1";
-
-let c10 = document.querySelector('#c10');
-c10.style.backgroundColor = "#577590";
-
-let c11 = document.querySelector('#c11');
-c11.style.backgroundColor = "#444444";
-
-let c12 = document.querySelector('#c12');
-c12.style.backgroundColor = "#222222";
-
-
+//Change "color" to background-color of button selection from color pallet
 for (let i = 1; i <= 12; i++) {
-    let a = document.querySelector("#c" + i);
-    let b = window.getComputedStyle(a, null).getPropertyValue('background-color');
-    a.addEventListener('click', function() {
-        color = b;
+    let colorOption = document.querySelector("#c" + i);
+    let colorSelection = window.getComputedStyle(colorOption, null).getPropertyValue('background-color');
+    colorOption.addEventListener('click', function() {
+        color = colorSelection;
         eraserButton.style.color = "#b6b6b6";
         colorButton.addEventListener('click', function() {
-            color = b;
+            color = colorSelection;
         })
     })
 }
 
-
-
-//Custom cursor
+//Custom cursor design
 let cursor = document.querySelector(".cursor");
 document.addEventListener('mousemove', function(e) {
     cursor.setAttribute("style", "top: " +  (e.clientY-7) + "px; left:  " + (e.clientX - 7) + "px;");
+    //cursor color changes according to selected color
     cursor.style.backgroundColor = color;
 })
 
 document.addEventListener('click', function() {
     cursor.style.backgroundColor = color;
+    //header and color button changes according to color selection
     let header = document.querySelector('header');
     header.style.color = color;
     colorButton.style.color = color;
 })
 
-colorButton.addEventListener('click', function() {
-    colorButton.style.color = color;
-    eraserButton.style.color = "#b6b6b6";
-})
