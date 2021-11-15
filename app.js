@@ -5,7 +5,6 @@ let pixelCount = 256;
 //Default pixel color
 let color = "#444444";
 
-
 //COLOR BUTTON
 let colorButton = document.querySelector('.colorButton');
 colorButton.style.color = "#444444";
@@ -14,7 +13,6 @@ colorButton.addEventListener('click', function() {
     colorButton.style.color = color;
     eraserButton.style.color = "#b6b6b6";
 })
-
 
 //ERASER BUTTON
 //When eraser button is clicked, cursor deletes pixel color 
@@ -40,7 +38,6 @@ clearButton.addEventListener('click', function() {
     clear();
     eraserButton.style.color = "#b6b6b6";
 })
-
 
 
 //CREATE GRID
