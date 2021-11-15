@@ -253,7 +253,6 @@ footer {
     .spacer{
         width: 27vw;
         height: 40vw;
-        z-index: -1;
     }
 }
 
@@ -272,7 +271,6 @@ footer {
     .spacer{
         width: 10vw;
         height: 40vw;
-        z-index: -1;
     }
 }
 
@@ -290,7 +288,6 @@ footer {
     .spacer{
         width: 10vw;
         height: 40vw;
-        z-index: -1;
     }
 }
 
@@ -300,6 +297,8 @@ footer {
         height: 10vh;
     }
 }
+
+
 
 
 
@@ -324,7 +323,51 @@ footer {
 
 @media all and (max-height: 700px) {
     .settingsContainer{
-        height: 75vh;
+        height: 70vh;
     }
 
+}
+
+@media all and (max-height: 650px) {
+    .settingsContainer{
+        height: 65vh;
+    }
+
+    .colorPalette {
+        width: 140px;
+        height: 155px;
+    }
+
+    
+    .colorButton {
+        font-size: 1.1rem;
+        font-weight: 600;
+        height: 40px;
+        width: 130px; 
+    }
+    
+    .eraserButton {
+        font-size: 1.1rem;
+        height: 40px;
+        width: 130px; 
+    }
+    
+    .clearButton {
+        font-size: 1.1rem;
+        height: 40px;
+        width: 130px;
+    }
+
+    .slider {
+        -webkit-appearance: none;
+        width: 130px;
+        height: 12px;
+    }
+
+    .slider::-webkit-slider-thumb {
+        
+        width: 12px;
+        height: 12px;
+        border: 2px solid rgb(195, 195, 195);
+    }
 }
