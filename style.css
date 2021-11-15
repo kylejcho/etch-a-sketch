@@ -240,6 +240,13 @@ footer {
     pointer-events: none;
 }
 
+.mobilePage {
+    display: none;
+    justify-content: center;
+    height: 60vh;
+    padding-top: 100px;
+}
+
 
 
 
@@ -307,8 +314,18 @@ footer {
     }
 }
 
-
-
+@media all and (max-width: 600px) {
+    header {
+        font-size: 2rem;
+        height: 15vh;
+    }
+    main {
+        display: none;
+    }
+    .mobilePage {
+        display: flex;
+    }
+}
 
 
 
