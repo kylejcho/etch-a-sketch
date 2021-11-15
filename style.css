@@ -240,17 +240,17 @@ footer {
 
 @media all and (max-width: 1400px) {
     .settingsContainer{
-        width: 30vw;
+        width: 27vw;
     }
 
     .pixelContainer {
-        width: 40vw;
-        height: 40vw;
+        width: 46vw;
+        height: 46vw;
         box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3);
     }
 
     .spacer{
-        width: 30vw;
+        width: 27vw;
         height: 40vw;
         z-index: -1;
     }
