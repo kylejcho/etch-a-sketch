@@ -12,6 +12,7 @@ header {
     display: flex;
     align-items: flex-end;
     justify-content: center;
+    align-items: center;
     font-size: 5rem;
     font-weight: 800;
     height: 15vh;
@@ -293,6 +294,13 @@ footer {
     }
 }
 
+@media all and (max-width: 800px) {
+    header {
+        font-size: 4rem;
+        height: 10vh;
+    }
+}
+
 
 
 
@@ -319,8 +327,4 @@ footer {
         height: 75vh;
     }
 
-
-    header {
-        font-size: 4.5rem;
-    }
 }
