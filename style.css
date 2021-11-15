@@ -361,10 +361,14 @@ footer {
 
 @media all and (max-height: 700px) {
     .settingsContainer{
-        height: 70vh;
+        height: 60vh;
     }
 
     header {
-        height: 10vh;
+        height: 15vh;
+    }
+
+    header {
+        font-size: 4rem;
     }
 }
