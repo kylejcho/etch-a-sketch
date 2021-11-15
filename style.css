@@ -235,25 +235,10 @@ footer {
     pointer-events: none;
 }
 
-@media all and (max-width: 1600px) {
-    .settingsContainer{
-        width: 32vw;
-    }
 
-    .pixelContainer {
-        width: 36vw;
-        height: 36vw;
-        box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3);
-    }
 
-    .spacer{
-        width: 32vw;
-        height: 40vw;
-        z-index: -1;
-    }
-}
 
-@media all and (max-width: 1450px) {
+@media all and (max-width: 1400px) {
     .settingsContainer{
         width: 30vw;
     }
@@ -270,56 +255,16 @@ footer {
         z-index: -1;
     }
 }
-
-
-
-@media all and (max-width: 1300px) {
-    .settingsContainer{
-        width: 35vw;
-    }
-
-    .pixelContainer {
-        width: 40vw;
-        height: 40vw;
-        box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .spacer{
-        width: 20vw;
-        height: 40vw;
-        z-index: -1;
-    }
-}
-
-
-@media all and (max-width: 1200px) {
-    .settingsContainer{
-        width: 40vw;
-    }
-
-    .pixelContainer {
-        width: 50vw;
-        height: 50vw;
-        box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    .spacer{
-        width: 10vw;
-        height: 40vw;
-        z-index: -1;
-    }
-}
-
 
 
 @media all and (max-width: 1100px) {
     .settingsContainer{
-        width: 35vw;
+        width: 30vw;
     }
 
     .pixelContainer {
-        width: 55vw;
-        height: 55vw;
+        width: 45vw;
+        height: 45vw;
         box-shadow: 0 -1px 20px rgba(0, 0, 0, 0.3);
     }
 
@@ -328,18 +273,8 @@ footer {
         height: 40vw;
         z-index: -1;
     }
-
-    header {
-        font-size: 4.5rem;
-    }
 }
 
-
-@media all and (max-height: 1000px) {
-    .settingsContainer{
-        height: 55vh;
-    }
-}
 
 @media all and (max-height: 1000px) {
     .settingsContainer{
@@ -364,11 +299,8 @@ footer {
         height: 75vh;
     }
 
-    header {
-        height: 15vh;
-    }
 
     header {
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
 }
